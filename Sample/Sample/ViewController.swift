@@ -23,9 +23,10 @@ class ViewController: UIViewController {
         self.label.styledText = "Hello, <red>World</red>!"
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        let next = ConversationTableViewController.init(style: .plain)
+        self.navigationController?.pushViewController(next, animated: true)
     }
 
 

@@ -20,6 +20,9 @@
 		64A0601420C537C000741B06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64A0601320C537C000741B06 /* Assets.xcassets */; };
 		64A0601720C537C000741B06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64A0601520C537C000741B06 /* LaunchScreen.storyboard */; };
 		64A0601F20C537EB00741B06 /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A0601E20C537EB00741B06 /* Shared.swift */; };
+		64FC98E620C54F330013544C /* ConversationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FC98E420C54F330013544C /* ConversationTableViewCell.swift */; };
+		64FC98E720C54F330013544C /* ConversationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64FC98E520C54F330013544C /* ConversationTableViewCell.xib */; };
+		64FC98E920C54FD20013544C /* ConversationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FC98E820C54FD20013544C /* ConversationTableViewController.swift */; };
 		9B1E107C79A4AD7034AD9972 /* Pods_All_Sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EC7CA5D5E8A91DE7327F1E2 /* Pods_All_Sample.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +47,9 @@
 		64A0601620C537C000741B06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		64A0601820C537C000741B06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		64A0601E20C537EB00741B06 /* Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
+		64FC98E420C54F330013544C /* ConversationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationTableViewCell.swift; sourceTree = "<group>"; };
+		64FC98E520C54F330013544C /* ConversationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConversationTableViewCell.xib; sourceTree = "<group>"; };
+		64FC98E820C54FD20013544C /* ConversationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationTableViewController.swift; sourceTree = "<group>"; };
 		6EC7CA5D5E8A91DE7327F1E2 /* Pods_All_Sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_Sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA854A71D20FE9915A371866 /* Pods-All-MacSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-MacSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-All-MacSample/Pods-All-MacSample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,6 +114,9 @@
 			children = (
 				64A0600C20C537BF00741B06 /* AppDelegate.swift */,
 				64A0600E20C537BF00741B06 /* ViewController.swift */,
+				64FC98E820C54FD20013544C /* ConversationTableViewController.swift */,
+				64FC98E420C54F330013544C /* ConversationTableViewCell.swift */,
+				64FC98E520C54F330013544C /* ConversationTableViewCell.xib */,
 				64A0601020C537BF00741B06 /* Main.storyboard */,
 				64A0601320C537C000741B06 /* Assets.xcassets */,
 				64A0601520C537C000741B06 /* LaunchScreen.storyboard */,
@@ -229,6 +238,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64FC98E720C54F330013544C /* ConversationTableViewCell.xib in Resources */,
 				64A0601720C537C000741B06 /* LaunchScreen.storyboard in Resources */,
 				64A0601420C537C000741B06 /* Assets.xcassets in Resources */,
 				64A0601220C537BF00741B06 /* Main.storyboard in Resources */,
@@ -327,7 +337,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64FC98E620C54F330013544C /* ConversationTableViewCell.swift in Sources */,
 				64A0601F20C537EB00741B06 /* Shared.swift in Sources */,
+				64FC98E920C54FD20013544C /* ConversationTableViewController.swift in Sources */,
 				64A0600F20C537BF00741B06 /* ViewController.swift in Sources */,
 				64A0600D20C537BF00741B06 /* AppDelegate.swift in Sources */,
 			);
@@ -374,7 +386,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 63YL5QDMNS;
 				INFOPLIST_FILE = MacSample/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = cn.meniny.EasyAttributedString.MacSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -394,7 +409,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 63YL5QDMNS;
 				INFOPLIST_FILE = MacSample/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = cn.meniny.EasyAttributedString.MacSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -525,7 +543,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 63YL5QDMNS;
 				INFOPLIST_FILE = Sample/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.meniny.EasyAttributedString.Sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -541,7 +562,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 63YL5QDMNS;
 				INFOPLIST_FILE = Sample/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.meniny.EasyAttributedString.Sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
