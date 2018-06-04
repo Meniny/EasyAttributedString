@@ -40,17 +40,23 @@ extension NSAttributedString {
         self.init(string: string, attributes: attributes.dictionary)
     }
     
+    #if !os(watchOS)
+    @available(macOS 10.11, iOS 7.0, tvOS 9.0, *)
     public convenience init(image: EAImage) {
         let attachment = NSTextAttachment.init()
         attachment.image = image
         self.init(attachment: attachment)
     }
+    #endif
 }
 
 extension NSMutableAttributedString {
+    #if !os(watchOS)
+    @available(macOS 10.11, iOS 7.0, tvOS 9.0, *)
     public func append(image: EAImage) {
         append(NSAttributedString.init(image: image))
     }
+    #endif
     
     /**
      Sets the attributes to the specified attributes.
