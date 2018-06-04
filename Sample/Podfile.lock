@@ -1,0 +1,16 @@
+PODS:
+  - EasyAttributedString (1.0.0)
+
+DEPENDENCIES:
+  - EasyAttributedString (from `../`)
+
+EXTERNAL SOURCES:
+  EasyAttributedString:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  EasyAttributedString: 792d9aa29d7a68a7c14fd531b73edc0f25c731bb
+
+PODFILE CHECKSUM: 789af3215ec3dc1172a6fbbcd09356a9a156f594
+
+COCOAPODS: 1.5.2
