@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name        = 'EasyAttributedString'
   s.module_name = 'EasyAttributedString'
-  s.version     = '1.0.0'
+  s.version     = '1.0.1'
   s.summary     = 'Make AttributedString much more easier.'
 
   s.homepage    = 'https://github.com/Meniny/EasyAttributedString'

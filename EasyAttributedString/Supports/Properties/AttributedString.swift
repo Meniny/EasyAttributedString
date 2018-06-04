@@ -39,9 +39,19 @@ extension NSAttributedString {
     public convenience init(string: String, attributes: EATextAttributes) {
         self.init(string: string, attributes: attributes.dictionary)
     }
+    
+    public convenience init(image: EAImage) {
+        let attachment = NSTextAttachment.init()
+        attachment.image = image
+        self.init(attachment: attachment)
+    }
 }
 
 extension NSMutableAttributedString {
+    public func append(image: EAImage) {
+        append(NSAttributedString.init(image: image))
+    }
+    
     /**
      Sets the attributes to the specified attributes.
      
