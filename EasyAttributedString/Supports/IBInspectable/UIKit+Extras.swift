@@ -172,7 +172,7 @@ extension UIButton {
         }
     }
     
-    public func setStyledTitle(_ styledTitle: String?, for state: UIControlState) {
+    public func setStyledTitle(_ styledTitle: String?, for state: UIControl.State) {
         guard let text = styledTitle else {
             self.setAttributedTitle(nil, for: state)
             return
@@ -181,7 +181,7 @@ extension UIButton {
         self.setAttributedTitle(attr, for: state)
     }
     
-    public func styledTitle(for state: UIControlState) -> String? {
+    public func styledTitle(for state: UIControl.State) -> String? {
         return attributedTitle(for: state)?.string
     }
 }

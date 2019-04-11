@@ -61,8 +61,8 @@ public class EAStyleGroup: EAStyleProtocol {
 	
 	/// Return all attributes merge of each single `EAStyle` of the group.
 	/// Attributes are reported in order of the insertion regardeless the associated name.
-	public var attributes: [NSAttributedStringKey : Any] {
-		var composedAttributes: [NSAttributedStringKey: Any] = [:]
+	public var attributes: [NSAttributedString.Key : Any] {
+		var composedAttributes: [NSAttributedString.Key: Any] = [:]
 		self.styles.enumerated().forEach { (_,style) in
 			composedAttributes.merge(style.attributes, uniquingKeysWith: { (_, new) in return new })
 		}
@@ -235,7 +235,7 @@ public extension Array where Array.Element == EAStyleProtocol {
 	///
 	/// - Returns: merged style
 	public func mergeStyle() -> EAStyle {
-		var attributes: [NSAttributedStringKey:Any] = [:]
+		var attributes: [NSAttributedString.Key:Any] = [:]
 		self.forEach { attributes.merge($0.attributes, uniquingKeysWith: { (_, new) in return new }) }
 		return EAStyle(dictionary: attributes)
 	}

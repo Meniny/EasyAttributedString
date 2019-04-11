@@ -1,5 +1,5 @@
 PODS:
-  - EasyAttributedString (1.0.0)
+  - EasyAttributedString (1.1.0)
 
 DEPENDENCIES:
   - EasyAttributedString (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  EasyAttributedString: 792d9aa29d7a68a7c14fd531b73edc0f25c731bb
+  EasyAttributedString: 225533b20e5db157222c825c6bacc94dd08140b9
 
-PODFILE CHECKSUM: 789af3215ec3dc1172a6fbbcd09356a9a156f594
+PODFILE CHECKSUM: a1e926a73aa7dc212f416eaf4430d910a4a15fb2
 
 COCOAPODS: 1.5.2

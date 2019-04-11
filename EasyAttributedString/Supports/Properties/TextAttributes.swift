@@ -41,7 +41,7 @@ public enum TextEffect {
 
 open class EATextAttributes {
     /// The attributes dictionary.
-    open fileprivate(set) var dictionary: [NSAttributedStringKey: Any] = [:]
+    open fileprivate(set) var dictionary: [NSAttributedString.Key: Any] = [:]
     
     /**
      Create an instance of EATextAttributes.
@@ -49,7 +49,7 @@ open class EATextAttributes {
      - returns: The created EATextAttributes.
      */
     public init() {
-        dictionary[NSAttributedStringKey.paragraphStyle] = paragraphStyle
+        dictionary[NSAttributedString.Key.paragraphStyle] = paragraphStyle
     }
     
     /**
@@ -80,10 +80,10 @@ open class EATextAttributes {
     /// The font attribute.
     open var font: EAFont? {
         get {
-            return dictionary[NSAttributedStringKey.font] as? EAFont ?? EAFont(name: "HelveticaNeue", size: 12)
+            return dictionary[NSAttributedString.Key.font] as? EAFont ?? EAFont(name: "HelveticaNeue", size: 12)
         }
         set {
-            dictionary[NSAttributedStringKey.font] = newValue
+            dictionary[NSAttributedString.Key.font] = newValue
         }
     }
     
@@ -118,7 +118,7 @@ open class EATextAttributes {
     /// The ligature attribute.
     open var ligature: EAStringLigatures {
         get {
-            if let int = dictionary[NSAttributedStringKey.ligature] as? Int, let ligature = EAStringLigatures(rawValue: int) {
+            if let int = dictionary[NSAttributedString.Key.ligature] as? Int, let ligature = EAStringLigatures(rawValue: int) {
                 return ligature
             } else {
                 return .defaults
@@ -126,7 +126,7 @@ open class EATextAttributes {
         }
         
         set {
-            dictionary[NSAttributedStringKey.ligature] = NSNumber(value: newValue.hashValue)
+            dictionary[NSAttributedString.Key.ligature] = NSNumber(value: newValue.hashValue)
         }
     }
     
@@ -148,11 +148,11 @@ open class EATextAttributes {
     /// The number of points by which to adjust kern-pair characters.
     open var kern: CGFloat {
         get {
-            return dictionary[NSAttributedStringKey.kern] as? CGFloat ?? 0
+            return dictionary[NSAttributedString.Key.kern] as? CGFloat ?? 0
         }
         
         set {
-            dictionary[NSAttributedStringKey.kern] = newValue as NSNumber
+            dictionary[NSAttributedString.Key.kern] = newValue as NSNumber
         }
     }
     
@@ -174,15 +174,17 @@ open class EATextAttributes {
     /// The strikethrough style attribute.
     open var strikethroughStyle: NSUnderlineStyle {
         get {
-            if let int = dictionary[NSAttributedStringKey.strikethroughStyle] as? Int, let style = NSUnderlineStyle(rawValue: int) {
+            if let int = dictionary[NSAttributedString.Key.strikethroughStyle] as? Int {
+                let style = NSUnderlineStyle(rawValue: int)
                 return style
             } else {
-                return .styleNone
+//                return .none
+                return []
             }
         }
         
         set {
-            dictionary[NSAttributedStringKey.strikethroughStyle] = NSNumber(value: newValue.rawValue)
+            dictionary[NSAttributedString.Key.strikethroughStyle] = NSNumber(value: newValue.rawValue)
         }
     }
     
@@ -204,10 +206,10 @@ open class EATextAttributes {
     /// The strikethrough color attribute.
     var strikethroughColor: EAColor? {
         get {
-            return dictionary[NSAttributedStringKey.strikethroughColor] as? EAColor
+            return dictionary[NSAttributedString.Key.strikethroughColor] as? EAColor
         }
         set {
-            dictionary[NSAttributedStringKey.strikethroughColor] = newValue
+            dictionary[NSAttributedString.Key.strikethroughColor] = newValue
         }
     }
     
@@ -284,15 +286,17 @@ open class EATextAttributes {
     /// The underline style attribute.
     open var underlineStyle: NSUnderlineStyle {
         get {
-            if let int = dictionary[NSAttributedStringKey.underlineStyle] as? Int, let style = NSUnderlineStyle(rawValue: int) {
+            if let int = dictionary[NSAttributedString.Key.underlineStyle] as? Int {
+                let style = NSUnderlineStyle(rawValue: int)
                 return style
             } else {
-                return .styleNone
+//                return .none
+                return []
             }
         }
         
         set {
-            dictionary[NSAttributedStringKey.underlineStyle] = NSNumber(value: newValue.rawValue)
+            dictionary[NSAttributedString.Key.underlineStyle] = NSNumber(value: newValue.rawValue)
         }
     }
     
@@ -314,10 +318,10 @@ open class EATextAttributes {
     /// The underline color attribute.
     open var underlineColor: EAColor? {
         get {
-            return dictionary[NSAttributedStringKey.underlineColor] as? EAColor
+            return dictionary[NSAttributedString.Key.underlineColor] as? EAColor
         }
         set {
-            dictionary[NSAttributedStringKey.underlineColor] = newValue
+            dictionary[NSAttributedString.Key.underlineColor] = newValue
         }
     }
     
@@ -394,10 +398,10 @@ open class EATextAttributes {
     /// The stroke color attribute.
     open var strokeColor: EAColor? {
         get {
-            return dictionary[NSAttributedStringKey.strokeColor] as? EAColor
+            return dictionary[NSAttributedString.Key.strokeColor] as? EAColor
         }
         set {
-            dictionary[NSAttributedStringKey.strokeColor] = newValue
+            dictionary[NSAttributedString.Key.strokeColor] = newValue
         }
     }
     
@@ -474,10 +478,10 @@ open class EATextAttributes {
     /// The stroke width attribute.
     open var strokeWidth: CGFloat {
         get {
-            return dictionary[NSAttributedStringKey.strokeWidth] as? CGFloat ?? 0
+            return dictionary[NSAttributedString.Key.strokeWidth] as? CGFloat ?? 0
         }
         set {
-            dictionary[NSAttributedStringKey.strokeWidth] = newValue as NSNumber
+            dictionary[NSAttributedString.Key.strokeWidth] = newValue as NSNumber
         }
     }
     
@@ -499,10 +503,10 @@ open class EATextAttributes {
     /// The foreground color attribute.
     open var foregroundColor: EAColor? {
         get {
-            return dictionary[NSAttributedStringKey.foregroundColor] as? EAColor
+            return dictionary[NSAttributedString.Key.foregroundColor] as? EAColor
         }
         set {
-            dictionary[NSAttributedStringKey.foregroundColor] = newValue
+            dictionary[NSAttributedString.Key.foregroundColor] = newValue
         }
     }
     
@@ -579,18 +583,18 @@ open class EATextAttributes {
     /// The text effect attribute.
     open var textEffect: TextEffect? {
         get {
-            if let effectStyle = dictionary[NSAttributedStringKey.textEffect] as? NSAttributedString.TextEffectStyle, let effect = TextEffect(name: effectStyle.rawValue) {
+            if let effectStyle = dictionary[NSAttributedString.Key.textEffect] as? NSAttributedString.TextEffectStyle, let effect = TextEffect(name: effectStyle.rawValue) {
                 return effect
-            } else if let string = dictionary[NSAttributedStringKey.textEffect] as? String, let effect = TextEffect(name: string) {
+            } else if let string = dictionary[NSAttributedString.Key.textEffect] as? String, let effect = TextEffect(name: string) {
                 return effect
             }
             return nil
         }
         set {
             if let name = newValue?.name {
-                dictionary[NSAttributedStringKey.textEffect] = NSString(string: name)
+                dictionary[NSAttributedString.Key.textEffect] = NSString(string: name)
             } else {
-                dictionary[NSAttributedStringKey.textEffect] = nil
+                dictionary[NSAttributedString.Key.textEffect] = nil
             }
         }
     }
@@ -613,16 +617,16 @@ open class EATextAttributes {
     /// The link attribute.
     open var link: URL? {
         get {
-            if let URL = dictionary[NSAttributedStringKey.link] as? URL {
+            if let URL = dictionary[NSAttributedString.Key.link] as? URL {
                 return URL
-            } else if let string = dictionary[NSAttributedStringKey.link] as? String {
+            } else if let string = dictionary[NSAttributedString.Key.link] as? String {
                 return URL(string: string)
             } else {
                 return nil
             }
         }
         set {
-            dictionary[NSAttributedStringKey.link] = newValue
+            dictionary[NSAttributedString.Key.link] = newValue
         }
     }
     
@@ -669,10 +673,10 @@ open class EATextAttributes {
     /// The baseline offset attribute.
     open var baselineOffset: CGFloat {
         get {
-            return dictionary[NSAttributedStringKey.baselineOffset] as? CGFloat ?? 0
+            return dictionary[NSAttributedString.Key.baselineOffset] as? CGFloat ?? 0
         }
         set {
-            dictionary[NSAttributedStringKey.baselineOffset] = newValue as NSNumber
+            dictionary[NSAttributedString.Key.baselineOffset] = newValue as NSNumber
         }
     }
     
@@ -694,10 +698,10 @@ open class EATextAttributes {
     /// The obliqueness attribute.
     open var obliqueness: CGFloat {
         get {
-            return dictionary[NSAttributedStringKey.obliqueness] as? CGFloat ?? 0
+            return dictionary[NSAttributedString.Key.obliqueness] as? CGFloat ?? 0
         }
         set {
-            dictionary[NSAttributedStringKey.obliqueness] = newValue as NSNumber
+            dictionary[NSAttributedString.Key.obliqueness] = newValue as NSNumber
         }
     }
     
@@ -719,10 +723,10 @@ open class EATextAttributes {
     /// The expansion attribute.
     open var expansion: CGFloat {
         get {
-            return dictionary[NSAttributedStringKey.expansion] as? CGFloat ?? 0
+            return dictionary[NSAttributedString.Key.expansion] as? CGFloat ?? 0
         }
         set {
-            dictionary[NSAttributedStringKey.expansion] = newValue as NSNumber
+            dictionary[NSAttributedString.Key.expansion] = newValue as NSNumber
         }
     }
     
@@ -744,14 +748,14 @@ open class EATextAttributes {
     /// The vertical glyph form attribute.
     open var verticalGlyphForm: VerticalGlyphForm {
         get {
-            if let int = dictionary[NSAttributedStringKey.verticalGlyphForm] as? Int, let form = VerticalGlyphForm(rawValue: int) {
+            if let int = dictionary[NSAttributedString.Key.verticalGlyphForm] as? Int, let form = VerticalGlyphForm(rawValue: int) {
                 return form
             } else {
                 return .horizontal
             }
         }
         set {
-            dictionary[NSAttributedStringKey.verticalGlyphForm] = NSNumber(value: newValue.hashValue)
+            dictionary[NSAttributedString.Key.verticalGlyphForm] = NSNumber(value: newValue.hashValue)
         }
     }
     
@@ -773,10 +777,10 @@ open class EATextAttributes {
     /// The background color attribute.
     var backgroundColor: EAColor? {
         get {
-            return dictionary[NSAttributedStringKey.backgroundColor] as? EAColor
+            return dictionary[NSAttributedString.Key.backgroundColor] as? EAColor
         }
         set {
-            dictionary[NSAttributedStringKey.backgroundColor] = newValue
+            dictionary[NSAttributedString.Key.backgroundColor] = newValue
         }
     }
     
@@ -853,7 +857,7 @@ open class EATextAttributes {
     /// The paragraph style attribute.
     open var paragraphStyle: NSMutableParagraphStyle = NSMutableParagraphStyle() {
         didSet {
-            dictionary[NSAttributedStringKey.paragraphStyle] = paragraphStyle
+            dictionary[NSAttributedString.Key.paragraphStyle] = paragraphStyle
         }
     }
     
@@ -1109,10 +1113,10 @@ open class EATextAttributes {
         /// The shadow attribute.
         public var shadow: NSShadow? {
             get {
-                return dictionary[NSAttributedStringKey.shadow] as? NSShadow
+                return dictionary[NSAttributedString.Key.shadow] as? NSShadow
             }
             set {
-                dictionary[NSAttributedStringKey.shadow] = newValue
+                dictionary[NSAttributedString.Key.shadow] = newValue
             }
         }
         
@@ -1176,10 +1180,10 @@ open class EATextAttributes {
         /// The attachment attribute.
         public var attachment: NSTextAttachment? {
             get {
-                return dictionary[NSAttributedStringKey.attachment] as? NSTextAttachment
+                return dictionary[NSAttributedString.Key.attachment] as? NSTextAttachment
             }
             set {
-                dictionary[NSAttributedStringKey.attachment] = newValue
+                dictionary[NSAttributedString.Key.attachment] = newValue
             }
         }
         

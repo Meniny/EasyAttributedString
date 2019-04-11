@@ -91,8 +91,8 @@ internal struct EAFontInfo {
 	///
 	/// - Parameter size: ignored. It will be overriden by `fontSize` property.
 	/// - Returns: instance of the font
-	var attributes: [NSAttributedStringKey:Any] {
-		var finalAttributes: [NSAttributedStringKey:Any] = [:]
+	var attributes: [NSAttributedString.Key:Any] {
+		var finalAttributes: [NSAttributedString.Key:Any] = [:]
 		
 		// generate an initial font from passed EAFontConvertible instance
 		var finalFont = self.font.font(size: self.size)

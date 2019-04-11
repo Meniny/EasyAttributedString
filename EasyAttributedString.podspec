@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name        = 'EasyAttributedString'
   s.module_name = 'EasyAttributedString'
-  s.version     = '1.0.1'
+  s.version     = '1.1.0'
   s.summary     = 'Make AttributedString much more easier.'
 
   s.homepage    = 'https://github.com/Meniny/EasyAttributedString'
@@ -17,6 +17,6 @@ Pod::Spec.new do |s|
   s.requires_arc        = true
   s.source              = { git: 'https://github.com/Meniny/EasyAttributedString.git', tag: s.version.to_s }
   s.source_files        = 'EasyAttributedString/**/*.swift'
-  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.1' }
-  s.swift_version       = '4.1'
+  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '5' }
+  s.swift_version       = '5'
 end

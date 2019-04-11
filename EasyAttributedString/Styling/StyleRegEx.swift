@@ -32,7 +32,7 @@ public class EAStyleRegEx: EAStyleProtocol {
 	private var style: EAStyleProtocol
 	
 	/// EAStyle attributes
-	public var attributes: [NSAttributedStringKey : Any] {
+	public var attributes: [NSAttributedString.Key : Any] {
 		return self.style.attributes
 	}
 	

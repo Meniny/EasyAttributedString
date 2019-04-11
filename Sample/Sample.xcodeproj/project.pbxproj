@@ -31,6 +31,8 @@
 		272F3717AB10A5017B65876E /* Pods-All-MacSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-MacSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-All-MacSample/Pods-All-MacSample.release.xcconfig"; sourceTree = "<group>"; };
 		2C0D94F208CEFC572003B60E /* Pods-All-Sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Sample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-All-Sample/Pods-All-Sample.debug.xcconfig"; sourceTree = "<group>"; };
 		49197BC8A846FBE66EA5E2A7 /* Pods_All_MacSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_MacSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C7D605D225F959B004BEB9B /* README.adoc */ = {isa = PBXFileReference; lastKnownFileType = text; name = README.adoc; path = ../README.adoc; sourceTree = "<group>"; };
+		5C7D605E225F959B004BEB9B /* EasyAttributedString.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = EasyAttributedString.podspec; path = ../EasyAttributedString.podspec; sourceTree = "<group>"; };
 		641F5DC520C5456B005A9B96 /* MacSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		641F5DC720C5456B005A9B96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		641F5DC920C5456B005A9B96 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +94,8 @@
 			isa = PBXGroup;
 			children = (
 				64A0601E20C537EB00741B06 /* Shared.swift */,
+				5C7D605E225F959B004BEB9B /* EasyAttributedString.podspec */,
+				5C7D605D225F959B004BEB9B /* README.adoc */,
 				64A0600B20C537BF00741B06 /* Sample */,
 				641F5DC620C5456B005A9B96 /* MacSample */,
 				64A0600A20C537BF00741B06 /* Products */,
@@ -199,9 +203,11 @@
 				TargetAttributes = {
 					641F5DC420C5456B005A9B96 = {
 						CreatedOnToolsVersion = 9.4;
+						LastSwiftMigration = 1020;
 					};
 					64A0600820C537BF00741B06 = {
 						CreatedOnToolsVersion = 9.4;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -394,7 +400,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = cn.meniny.EasyAttributedString.MacSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -417,7 +423,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = cn.meniny.EasyAttributedString.MacSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -549,7 +555,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.meniny.EasyAttributedString.Sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -568,7 +574,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.meniny.EasyAttributedString.Sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

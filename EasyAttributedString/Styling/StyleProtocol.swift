@@ -16,8 +16,8 @@ public typealias EAString = NSMutableAttributedString
 
 public protocol EAStyleProtocol: class {
 	
-	/// Return the attributes of the style in form of dictionary `NSAttributedStringKey`/`Any`.
-	var attributes: [NSAttributedStringKey : Any] { get }
+	/// Return the attributes of the style in form of dictionary `NSAttributedString.Key`/`Any`.
+	var attributes: [NSAttributedString.Key : Any] { get }
 	
 	func set(to source: String, range: NSRange?) -> EAString
 	func add(to source: EAString, range: NSRange?) -> EAString

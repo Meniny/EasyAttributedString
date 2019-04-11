@@ -22,7 +22,8 @@ public typealias EAImage = NSImage
 public typealias EAFont = NSFont
 public typealias EAFontDescriptor = NSFontDescriptor
 public typealias EASymbolicTraits = NSFontDescriptor.SymbolicTraits
-public typealias EALineBreak = NSParagraphStyle.LineBreakMode
+//public typealias EALineBreak = NSParagraphStyle.NSLineBreakMode
+public typealias EALineBreak = NSLineBreakMode
 
 let EAFontDescriptorFeatureSettingsAttribute = NSFontDescriptor.AttributeName.featureSettings
 let EAFontFeatureTypeIdentifierKey = NSFontDescriptor.FeatureKey.typeIdentifier
@@ -41,7 +42,7 @@ public typealias EAColor = UIColor
 public typealias EAImage = UIImage
 public typealias EAFont = UIFont
 public typealias EAFontDescriptor = UIFontDescriptor
-public typealias EASymbolicTraits = UIFontDescriptorSymbolicTraits
+public typealias EASymbolicTraits = UIFontDescriptor.SymbolicTraits
 public typealias EALineBreak = NSLineBreakMode
 
 let EAFontDescriptorFeatureSettingsAttribute = UIFontDescriptor.AttributeName.featureSettings
